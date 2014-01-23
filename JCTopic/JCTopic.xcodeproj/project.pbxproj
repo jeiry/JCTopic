@@ -21,6 +21,7 @@
 		499C871118911FF6002707A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499C86F318911FF6002707A3 /* UIKit.framework */; };
 		499C871918911FF6002707A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 499C871718911FF6002707A3 /* InfoPlist.strings */; };
 		499C871B18911FF6002707A3 /* JCTopicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 499C871A18911FF6002707A3 /* JCTopicTests.m */; };
+		499C872718912036002707A3 /* JCTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 499C872618912036002707A3 /* JCTopic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		499C871618911FF6002707A3 /* JCTopicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JCTopicTests-Info.plist"; sourceTree = "<group>"; };
 		499C871818911FF6002707A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		499C871A18911FF6002707A3 /* JCTopicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JCTopicTests.m; sourceTree = "<group>"; };
+		499C872518912036002707A3 /* JCTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCTopic.h; sourceTree = "<group>"; };
+		499C872618912036002707A3 /* JCTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCTopic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,7 @@
 		499C86F518911FF6002707A3 /* JCTopic */ = {
 			isa = PBXGroup;
 			children = (
+				499C872418912036002707A3 /* JCTopic */,
 				499C86FE18911FF6002707A3 /* AppDelegate.h */,
 				499C86FF18911FF6002707A3 /* AppDelegate.m */,
 				499C870118911FF6002707A3 /* Main.storyboard */,
@@ -150,6 +154,15 @@
 				499C871718911FF6002707A3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		499C872418912036002707A3 /* JCTopic */ = {
+			isa = PBXGroup;
+			children = (
+				499C872518912036002707A3 /* JCTopic.h */,
+				499C872618912036002707A3 /* JCTopic.m */,
+			);
+			path = JCTopic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499C872718912036002707A3 /* JCTopic.m in Sources */,
 				499C870618911FF6002707A3 /* ViewController.m in Sources */,
 				499C870018911FF6002707A3 /* AppDelegate.m in Sources */,
 				499C86FC18911FF6002707A3 /* main.m in Sources */,
@@ -460,6 +474,7 @@
 				499C872018911FF6002707A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		499C872118911FF6002707A3 /* Build configuration list for PBXNativeTarget "JCTopicTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +483,7 @@
 				499C872318911FF6002707A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
