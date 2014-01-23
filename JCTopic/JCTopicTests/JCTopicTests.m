@@ -1,6 +1,6 @@
 //
-//  JCTopicsTests.m
-//  JCTopicsTests
+//  JCTopicTests.m
+//  JCTopicTests
 //
 //  Created by jc on 14-1-23.
 //  Copyright (c) 2014年 jc. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface JCTopicsTests : XCTestCase
+@interface JCTopicTests : XCTestCase
 
 @end
 
-@implementation JCTopicsTests
+@implementation JCTopicTests
 
 - (void)setUp
 {

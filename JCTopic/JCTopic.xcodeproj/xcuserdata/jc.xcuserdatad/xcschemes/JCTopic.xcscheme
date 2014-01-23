@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "499C86AA18911B77002707A3"
-               BuildableName = "JCTopics.app"
-               BlueprintName = "JCTopics"
-               ReferencedContainer = "container:JCTopics.xcodeproj">
+               BlueprintIdentifier = "499C86EB18911FF6002707A3"
+               BuildableName = "JCTopic.app"
+               BlueprintName = "JCTopic"
+               ReferencedContainer = "container:JCTopic.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "499C86CB18911B77002707A3"
-               BuildableName = "JCTopicsTests.xctest"
-               BlueprintName = "JCTopicsTests"
-               ReferencedContainer = "container:JCTopics.xcodeproj">
+               BlueprintIdentifier = "499C870C18911FF6002707A3"
+               BuildableName = "JCTopicTests.xctest"
+               BlueprintName = "JCTopicTests"
+               ReferencedContainer = "container:JCTopic.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "499C86AA18911B77002707A3"
-            BuildableName = "JCTopics.app"
-            BlueprintName = "JCTopics"
-            ReferencedContainer = "container:JCTopics.xcodeproj">
+            BlueprintIdentifier = "499C86EB18911FF6002707A3"
+            BuildableName = "JCTopic.app"
+            BlueprintName = "JCTopic"
+            ReferencedContainer = "container:JCTopic.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "499C86AA18911B77002707A3"
-            BuildableName = "JCTopics.app"
-            BlueprintName = "JCTopics"
-            ReferencedContainer = "container:JCTopics.xcodeproj">
+            BlueprintIdentifier = "499C86EB18911FF6002707A3"
+            BuildableName = "JCTopic.app"
+            BlueprintName = "JCTopic"
+            ReferencedContainer = "container:JCTopic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "499C86AA18911B77002707A3"
-            BuildableName = "JCTopics.app"
-            BlueprintName = "JCTopics"
-            ReferencedContainer = "container:JCTopics.xcodeproj">
+            BlueprintIdentifier = "499C86EB18911FF6002707A3"
+            BuildableName = "JCTopic.app"
+            BlueprintName = "JCTopic"
+            ReferencedContainer = "container:JCTopic.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

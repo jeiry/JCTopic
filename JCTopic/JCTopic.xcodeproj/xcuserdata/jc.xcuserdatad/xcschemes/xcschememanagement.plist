@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>JCTopics.xcscheme</key>
+		<key>JCTopic.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>499C86AA18911B77002707A3</key>
+		<key>499C86EB18911FF6002707A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>499C86CB18911B77002707A3</key>
+		<key>499C870C18911FF6002707A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
