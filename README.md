@@ -68,3 +68,4 @@ JCTopics
 	//返回页数
 	-(void)currentPage:(int)page total:(NSUInteger)total;
 	
+![image](https://raw.github.com/jeirycheng/JCTopic/master/Screenshot.png)
