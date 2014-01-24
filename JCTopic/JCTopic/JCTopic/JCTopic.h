@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @protocol JCTopicDelegate<NSObject>
 -(void)didClick:(id)data;
--(void)currentPage:(int)page;
+-(void)currentPage:(int)page total:(NSUInteger)total;
 @end
 @interface JCTopic : UIScrollView<UIScrollViewDelegate>{
     UIButton * pic;
@@ -22,7 +22,6 @@
 }
 @property(nonatomic,strong)NSArray * pics;
 @property(nonatomic,retain)id<JCTopicDelegate> JCdelegate;
-@property(nonatomic,strong)UIImage * placeholderImage;
 -(void)releaseTimer;
 -(void)upDate;
 @end

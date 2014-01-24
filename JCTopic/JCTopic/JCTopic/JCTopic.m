@@ -7,7 +7,6 @@
 //
 
 #import "JCTopic.h"
-#import "UIImageView+WebCache.h"
 @implementation JCTopic
 @synthesize JCdelegate;
 - (id)initWithFrame:(CGRect)frame
@@ -27,18 +26,6 @@
     self.showsVerticalScrollIndicator = NO;
     self.backgroundColor = [UIColor whiteColor];
 }
--(UIImage*)drawImage{
-    imageSize = CGSizeMake(self.frame.size.width, self.frame.size.height);
-    UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
-    [[UIColor blackColor] set];
-    UIRectFill(CGRectMake(0, 0, imageSize.width, imageSize.height));
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    
-    UIGraphicsEndImageContext();
-    return image;
-}
-
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -50,7 +37,6 @@
 -(void)upDate{
     NSMutableArray * tempImageArray = [[NSMutableArray alloc]init];
     
-//    NSLog(@"%@",self.pics);
     
     [tempImageArray addObject:[self.pics lastObject]];
     for (id obj in self.pics) {
@@ -59,7 +45,6 @@
     [tempImageArray addObject:[self.pics objectAtIndex:0]];
     self.pics = Nil;
     self.pics = tempImageArray;
-    //    NSLog(@"%@",self.pics);
     
     int i = 0;
     for (id obj in self.pics) {
@@ -70,13 +55,26 @@
         UIImageView * tempImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, pic.frame.size.width, pic.frame.size.height)];
         tempImage.contentMode = UIViewContentModeScaleAspectFill;
         [tempImage setClipsToBounds:YES];
-        UIImage * tempPlaceholderImage;
-        if (self.placeholderImage == Nil) {
-            tempPlaceholderImage = [self drawImage];
+        if ([[obj objectForKey:@"isLoc"]boolValue]) {
+            [tempImage setImage:[obj objectForKey:@"pic"]];
         }else{
-            tempPlaceholderImage = self.placeholderImage;
+            if ([obj objectForKey:@"placeholderImage"]) {
+                [tempImage setImage:[obj objectForKey:@"placeholderImage"]];
+            }
+            [NSURLConnection sendAsynchronousRequest:[NSMutableURLRequest requestWithURL:[NSURL URLWithString:[obj objectForKey:@"pic"]]]
+                                               queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                                                   NSInteger responseCode = [(NSHTTPURLResponse *)response statusCode];
+                                                   if (!error && responseCode == 200) {
+                                                       tempImage.image = Nil;
+                                                       UIImage *_img = [[UIImage alloc] initWithData:data];
+                                                       [tempImage setImage:_img];
+                                                   }else{
+                                                       if ([obj objectForKey:@"placeholderImage"]) {
+                                                           [tempImage setImage:[obj objectForKey:@"placeholderImage"]];
+                                                       }
+                                                   }
+                                               }];
         }
-        [tempImage setImageWithURL:[NSURL URLWithString:[obj objectForKey:@"pic"]] placeholderImage:tempPlaceholderImage];
         [pic addSubview:tempImage];
         [pic setBackgroundColor:[UIColor grayColor]];
         pic.tag = i;
@@ -121,9 +119,8 @@
             [self setContentOffset:CGPointMake(self.frame.size.width, 0) animated:NO];
         }
     }
-//
     currentPage = scrollView.contentOffset.x/self.frame.size.width-1;
-    [JCdelegate currentPage:currentPage];
+    [JCdelegate currentPage:currentPage total:[self.pics count]-2];
     scrollTopicFlag = currentPage+2==2?2:currentPage+2;
 }
 -(void)scrollTopic{
@@ -134,7 +131,6 @@
     }else {
         scrollTopicFlag++;
     }
-    //    NSLog(@"scrollTopicFlag %d",scrollTopicFlag);
 }
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     scrollTimer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(scrollTopic) userInfo:nil repeats:YES];
